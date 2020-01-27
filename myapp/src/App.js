@@ -12,6 +12,12 @@ class App extends Component {
       {name:'Mike', age: 22}
     ]
   }
+
+  switchNameHandler = () =>{
+
+    //console.log('clicked');
+    //this.state.persons[0].name="theodoros";
+  }
   render() { 
     return (
 
@@ -20,7 +26,7 @@ class App extends Component {
           Hi I'am a react app
         </h1>
         <p>This is really working</p>
-        <button>Switching name</button>
+        <button onClick = {this.switchNameHandler}>Switching name</button>
         <Person name = {this.state.persons[0].name} age ={this.state.persons[0].age}/>
         <Person name = {this.state.persons[1].name} age = {this.state.persons[1].age}>My hobbies racing</Person>
         <Person name ={this.state.persons[2].name}age = {this.state.persons[2].age}/>
