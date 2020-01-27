@@ -4,6 +4,14 @@ import './App.css';
 
 class App extends Component {
   
+  state ={
+
+    persons:[
+      {name: 'Theo', age:29},
+      {name:'Jack', age:32},
+      {name:'Mike', age: 22}
+    ]
+  }
   render() { 
     return (
 
@@ -12,7 +20,10 @@ class App extends Component {
           Hi I'am a react app
         </h1>
         <p>This is really working</p>
-        <Person/>
+        <button>Switching name</button>
+        <Person name = {this.state.persons[0].name} age ={this.state.persons[0].age}/>
+        <Person name = {this.state.persons[1].name} age = {this.state.persons[1].age}>My hobbies racing</Person>
+        <Person name ={this.state.persons[2].name}age = {this.state.persons[2].age}/>
       </div>
 
       );
