@@ -65,11 +65,16 @@ class App extends Component {
   render() { 
 
     const style ={
-      backgroundColor:'white',
+      backgroundColor:'green',
+      color: 'white',
       font:'inherit',
       border: '1px solid blue',
       padding:'8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
 
     };
 
@@ -98,11 +103,23 @@ class App extends Component {
         <Person
          name ={this.state.persons[2].name}age = {this.state.persons[2].age}/> */}
       </div> 
-
-
       );
+      style.backgroundColor= 'red';
+      style[':hover'] = {
+        backgroundColor: 'salmon',
+        color: 'black'
+      }
     }
 
+
+    let classes = [];
+    if(this.state.persons.length <=2){
+      //vazei ti class red an isxuei
+      classes.push('red');
+    }
+    if(this.state.persons.length <=1){
+      classes.push('bold'); // classes = KAI  RED KAI BOLD
+    }
 
     return (
 
@@ -110,14 +127,14 @@ class App extends Component {
         <h1>
           Hi I'am a react app
         </h1>
-        <p>This is really working</p>
+         {/* epeidi oi classes mou einai san array vazw join */}
+        <p className={classes.join(' ')}>This is really working</p>
         <button 
         style={style}
         onClick = {this.togglePersonHandler}>Switching name</button>
         {persons}
-        {/* anaferetai st ket persons */}
+        {/* anaferetai st let persons */}
       </div>
-
       );
   }
 }
